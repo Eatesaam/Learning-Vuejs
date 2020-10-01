@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binding Classes With Objects And Arrays</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js" defer></script>
+    
+
+</head>
+<body>
+    <div id="app">
+        <b>cart:</b>
+        <span>{{cart.length}}</span>
+        <div class="align-item-center" :class="sliderState">
+            <label :class="labelArr" for="formMax">max</label>
+            <input type="text" name="" id="formMax" v-model="maximum" :style="{'width': inputwidth +'px', textAlign:'center'}">
+            <input type="range" name="" id="" min="0" max="100" v-model="maximum">
+            <div v-for="item in products">
+                <div v-if="item.price <= Number(maximum)">
+                    <button v-on:click="addItem(item)">+</button>
+                    <img v-bind:src="item.image" :alt="item.name">
+                    <h2>{{item.name}}</h2>
+                    <p> {{item.description}} </p>
+                    <h3>${{item.price}}</h3>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
