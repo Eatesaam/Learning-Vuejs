@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute & Class Binding</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .color-red{
+            color: red;
+        }
+        .is-loading{
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <button @click="method" :title="title">Hover over me</button>
+        <h1 :class="className">Hello World</h1> 
+        <button :class="{'is-loading' : isLoading}" @click="toggelClass">Toogel Me</button>
+    </div>
+    
+    <script>
+        
+
+      
+     var app =  new Vue({
+                el: '#root',
+
+                data:  {
+                   title: "Set title by java script",
+                   className: 'color-red',
+                   isLoading: false
+                },
+
+                methods: {
+                    toggelClass(){
+                        this.isLoading = true;
+                    }
+                }
+
+                
+            });
+
+       
+
+    </script>
+
+</body>
+</html>
